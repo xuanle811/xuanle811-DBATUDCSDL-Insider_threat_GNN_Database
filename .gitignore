@@ -1,0 +1,32 @@
+# Virtual environment
+venv/
+.env/
+
+# Byte-compiled / cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Data files
+cert_data/
+answers/
+answer not use/
+
+# Output folders
+
+output_MAYKHOE/
+output/
+
+# Model checkpoints
+*.h5
+*.ckpt
+*.pth
+*.pt
+
+# IDE / editor settings
+.vscode/
+.idea/
