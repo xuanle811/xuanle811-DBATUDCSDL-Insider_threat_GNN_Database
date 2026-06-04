@@ -1,0 +1,8 @@
+AUDIT_LOG_PATH = "./db_data/audit_log.csv"
+ANOMALY_GROUND_TRUTH_PATH = "./db_data/anomaly_ground_truth.csv"
+TABLE_METADATA_PATH = "./db_data/table_metadata.csv"
+TABLE_RELATIONS_PATH = "./db_data/table_relations.csv"
+USER_METADATA_PATH = "./db_data/user_metadata.csv"
+ANOMALY_GROUND_TRUTH_USER_PATH = "./db_data/anomaly_ground_truth_user.csv"
+CLEAN_AUDIT_LOG_PATH = "./clean_db_data/audit_log.csv"
+CLEAN_USER_METADATA_PATH = "./clean_db_data/user_metadata.csv"

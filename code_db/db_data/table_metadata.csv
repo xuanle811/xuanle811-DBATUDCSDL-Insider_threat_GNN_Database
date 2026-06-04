@@ -1,0 +1,11 @@
+table_name,security_level,row_count,schema
+region,1,5,public
+nation,1,25,public
+customer,1,150000,public
+orders,1,1500000,public
+lineitem,1,6000000,public
+part,1,200000,public
+supplier,1,10000,public
+partsupp,2,800000,public
+salary_details,3,5000,public
+system_catalog,4,1200,pg_catalog

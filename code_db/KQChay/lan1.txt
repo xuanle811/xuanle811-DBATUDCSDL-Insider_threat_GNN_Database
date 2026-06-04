@@ -1,0 +1,121 @@
+Chỉ so sánh với snapshot cuối để test
+
+
+(gnn-angr-gpu-test) PS D:\CAOHOCXUAN2025\1.2\CAOHOC2025\ky2nam1\DBATUD_CSDL\DBATCSDL_code\code_db> python a04_train_evaluate_onlysage.py --phase 1
+08:45:29 [INFO] Train graph: 'hetero_graph.pt' | 5 snaps | 2625 sessions (last)
+08:45:29 [INFO] Test graph : 'hetero_test_graph.pt' | 2 snaps | 838 sessions (last)
+08:45:29 [INFO] 
+============================================================
+08:45:29 [INFO]   PHASE 1 — TRAIN + TEST TĨNH (train graph, 60 ngày)
+08:45:29 [INFO] ============================================================
+08:45:29 [INFO] 
+  → Đang train: SAGE
+C:\Users\admin\anaconda3\envs\gnn-angr-gpu-test\Lib\site-packages\torch\nn\modules\transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+08:45:29 [INFO]     Warm-up OK | gnn_type=sage
+08:45:29 [INFO] 
+============================================================
+  SAGE | Params=921,601 | pos_weight=11.12
+============================================================
+08:45:30 [INFO]   Ep 001 | TrainLoss=0.7722 | ValLoss=0.8513 | ValF1=0.5484 | AUC=0.7877 | Th=0.89 | LR=1.00e-03
+08:45:38 [INFO]   Ep 010 | TrainLoss=0.6157 | ValLoss=0.6787 | ValF1=0.5424 | AUC=0.7889 | Th=0.62 | LR=1.00e-03
+08:45:47 [INFO]   Ep 020 | TrainLoss=0.5600 | ValLoss=0.5471 | ValF1=0.5246 | AUC=0.7936 | Th=0.69 | LR=1.00e-03
+08:45:55 [INFO]   Ep 030 | TrainLoss=0.4870 | ValLoss=0.5026 | ValF1=0.5600 | AUC=0.9194 | Th=0.64 | LR=1.00e-03
+08:46:04 [INFO]   Ep 040 | TrainLoss=0.4288 | ValLoss=0.4289 | ValF1=0.7164 | AUC=0.9156 | Th=0.75 | LR=1.00e-03
+08:46:13 [INFO]   Ep 050 | TrainLoss=0.3539 | ValLoss=0.4373 | ValF1=0.6747 | AUC=0.8971 | Th=0.73 | LR=1.00e-03
+08:46:22 [INFO]   Ep 060 | TrainLoss=0.3555 | ValLoss=0.4463 | ValF1=0.6269 | AUC=0.8834 | Th=0.87 | LR=1.00e-03
+08:46:31 [INFO]   Ep 070 | TrainLoss=0.2966 | ValLoss=0.3430 | ValF1=0.8916 | AUC=0.9721 | Th=0.50 | LR=1.00e-03
+08:46:40 [INFO]   Ep 080 | TrainLoss=0.2871 | ValLoss=0.3420 | ValF1=0.8916 | AUC=0.9739 | Th=0.46 | LR=1.00e-03
+08:46:49 [INFO]   Ep 090 | TrainLoss=0.3101 | ValLoss=0.2988 | ValF1=0.8500 | AUC=0.9652 | Th=0.63 | LR=5.00e-04
+08:46:58 [INFO]   Ep 100 | TrainLoss=0.2537 | ValLoss=0.3092 | ValF1=0.8395 | AUC=0.9516 | Th=0.64 | LR=2.50e-04
+08:47:07 [INFO]   Ep 110 | TrainLoss=0.2383 | ValLoss=0.3165 | ValF1=0.8354 | AUC=0.9617 | Th=0.65 | LR=2.50e-04
+08:47:07 [INFO]   [EarlyStop] Ep=110 | best_val_f1=0.8916
+08:47:07 [INFO]   Best: epoch=70 | val_f1=0.8916 | val_auc=0.9721 | threshold=0.500
+
+═════════════════════════════════════════════════════════════════
+  PHASE 1 TEST TĨNH — SAGE
+═════════════════════════════════════════════════════════════════
+  Sessions      : 525
+  Threshold     : 0.500
+  Accuracy      : 99.24%
+  Precision     : 1.0000
+  Recall        : 0.9070
+  F1-Score      : 0.9512  ← chỉ số cốt lõi paper
+  AUC-ROC       : 0.9918
+  Avg Precision : 0.9573  (PR-AUC)
+  CM  TN=482  FP=0  FN=4  TP=39
+═════════════════════════════════════════════════════════════════
+08:47:07 [INFO] 
+  → Đang train: RGCN
+08:47:07 [INFO]     Warm-up OK | gnn_type=rgcn
+08:47:07 [INFO] 
+============================================================
+  RGCN | Params=243,969 | pos_weight=11.12
+============================================================
+08:47:07 [INFO]   Ep 001 | TrainLoss=0.7879 | ValLoss=0.7758 | ValF1=0.1706 | AUC=0.5465 | Th=0.49 | LR=1.00e-03
+08:47:09 [INFO]   Ep 010 | TrainLoss=0.7445 | ValLoss=0.7129 | ValF1=0.2857 | AUC=0.6201 | Th=0.63 | LR=1.00e-03
+08:47:12 [INFO]   Ep 020 | TrainLoss=0.7034 | ValLoss=0.6911 | ValF1=0.2963 | AUC=0.6690 | Th=0.59 | LR=1.00e-03
+08:47:15 [INFO]   Ep 030 | TrainLoss=0.6947 | ValLoss=0.6676 | ValF1=0.3214 | AUC=0.6805 | Th=0.62 | LR=1.00e-03
+08:47:17 [INFO]   Ep 040 | TrainLoss=0.6722 | ValLoss=0.6434 | ValF1=0.3273 | AUC=0.6856 | Th=0.61 | LR=1.00e-03
+08:47:20 [INFO]   Ep 050 | TrainLoss=0.6669 | ValLoss=0.6302 | ValF1=0.3273 | AUC=0.6807 | Th=0.80 | LR=1.00e-03
+08:47:22 [INFO]   Ep 060 | TrainLoss=0.6599 | ValLoss=0.6177 | ValF1=0.3396 | AUC=0.6858 | Th=0.82 | LR=1.00e-03
+08:47:25 [INFO]   Ep 070 | TrainLoss=0.6472 | ValLoss=0.6139 | ValF1=0.3396 | AUC=0.6874 | Th=0.74 | LR=1.00e-03
+08:47:28 [INFO]   Ep 080 | TrainLoss=0.6436 | ValLoss=0.6102 | ValF1=0.3462 | AUC=0.6875 | Th=0.75 | LR=1.00e-03
+08:47:30 [INFO]   Ep 090 | TrainLoss=0.6452 | ValLoss=0.6072 | ValF1=0.3462 | AUC=0.6891 | Th=0.73 | LR=1.00e-03
+08:47:33 [INFO]   Ep 100 | TrainLoss=0.6387 | ValLoss=0.6089 | ValF1=0.3462 | AUC=0.6924 | Th=0.60 | LR=1.00e-03
+08:47:36 [INFO]   Ep 110 | TrainLoss=0.6388 | ValLoss=0.6089 | ValF1=0.3462 | AUC=0.6924 | Th=0.59 | LR=1.00e-03
+08:47:36 [INFO]   [EarlyStop] Ep=112 | best_val_f1=0.3462
+08:47:36 [INFO]   Best: epoch=72 | val_f1=0.3462 | val_auc=0.6891 | threshold=0.690
+
+═════════════════════════════════════════════════════════════════
+  PHASE 1 TEST TĨNH — RGCN
+═════════════════════════════════════════════════════════════════
+  Sessions      : 525
+  Threshold     : 0.690
+  Accuracy      : 93.90%
+  Precision     : 0.9231
+  Recall        : 0.2791
+  F1-Score      : 0.4286  ← chỉ số cốt lõi paper
+  AUC-ROC       : 0.7329
+  Avg Precision : 0.3738  (PR-AUC)
+  CM  TN=481  FP=1  FN=31  TP=12
+═════════════════════════════════════════════════════════════════
+08:47:36 [INFO] 
+  → Đang train: GAT
+08:47:37 [INFO]     Warm-up OK | gnn_type=gat
+08:47:37 [INFO] 
+============================================================
+  GAT | Params=431,617 | pos_weight=11.12
+============================================================
+08:47:37 [INFO]   Ep 001 | TrainLoss=0.8901 | ValLoss=0.8848 | ValF1=0.1566 | AUC=0.5111 | Th=0.22 | LR=1.00e-03
+08:47:39 [INFO]   Ep 010 | TrainLoss=0.7914 | ValLoss=0.7715 | ValF1=0.1696 | AUC=0.5413 | Th=0.42 | LR=1.00e-03
+08:47:41 [INFO]   Ep 020 | TrainLoss=0.7507 | ValLoss=0.7665 | ValF1=0.1699 | AUC=0.5370 | Th=0.42 | LR=1.00e-03
+08:47:44 [INFO]   Ep 030 | TrainLoss=0.7315 | ValLoss=0.7433 | ValF1=0.1730 | AUC=0.5747 | Th=0.40 | LR=1.00e-03
+08:47:46 [INFO]   Ep 040 | TrainLoss=0.7273 | ValLoss=0.7282 | ValF1=0.1761 | AUC=0.5779 | Th=0.42 | LR=1.00e-03
+08:47:47 [INFO]   [EarlyStop] Ep=45 | best_val_f1=0.1915
+08:47:47 [INFO]   Best: epoch=5 | val_f1=0.1915 | val_auc=0.5812 | threshold=0.550
+
+═════════════════════════════════════════════════════════════════
+  PHASE 1 TEST TĨNH — GAT
+═════════════════════════════════════════════════════════════════
+  Sessions      : 525
+  Threshold     : 0.550
+  Accuracy      : 84.19%
+  Precision     : 0.1552
+  Recall        : 0.2093
+  F1-Score      : 0.1782  ← chỉ số cốt lõi paper
+  AUC-ROC       : 0.5788
+  Avg Precision : 0.1137  (PR-AUC)
+  CM  TN=433  FP=49  FN=34  TP=9
+═════════════════════════════════════════════════════════════════
+
+────────────────────────────────────────────────────────────────────────────────
+  PHASE 1 — SO SÁNH TEST TĨNH (train graph)
+────────────────────────────────────────────────────────────────────────────────
+  Model        F1    AUC     AP   Prec    Rec    Acc  Inductive
+────────────────────────────────────────────────────────────────────────────────
+** SAGE    0.9512 0.9918 0.9573 1.0000 0.9070 0.9924      YES ✓
+   RGCN    0.4286 0.7329 0.3738 0.9231 0.2791 0.9390       NO ✗
+   GAT     0.1782 0.5788 0.1137 0.1552 0.2093 0.8419       NO ✗
+────────────────────────────────────────────────────────────────────────────────
+08:47:48 [INFO]   → Figure: results\figures\phase1_train_graph.png

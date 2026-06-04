@@ -1,0 +1,184 @@
+TThêm 3 module, chạy lần 1:
+────────────────────────────────────────────────────────────────────────────────
+09:12:41 [INFO]   → Figure: results\figures\phase2_inductive_test.png                              python a04 --phase 1 --neighbors 10 5
+(gnn-angr-gpu-test) PS D:\CAOHOCXUAN2025\1.2\CAOHOC2025\ky2nam1\DBATUD_CSDL\DBATCSDL_code\code_db> 
+C:\Users\admin\anaconda3\envs\gnn-angr-gpu-test\python.exe: can't open file 'D:\\CAOHOCXUAN2025\\1.2\\CAOHOC2025\\ky2nam1\\DBATUD_CSDL\\DBATCSDL_code\\code_db\\a04': [Errno 2] No such file or directory                                  python .\a04_train_evaluate_onlysage.py --phase 1 --neighbors 10 5HOCXUAN2025\1.2\CAOHOC2025\ky2nam1\DBATUD_CSDL\DBATCSDL_code\code_db> 
+10:44:29 [INFO]   Settings: neighbors=[10, 5] | calibration=True | adaptive_th=f1_beta
+10:44:29 [INFO] Train graph: 'hetero_graph.pt' | 5 snaps | 2625 sessions (last)
+10:44:29 [INFO] Test graph : 'hetero_test_graph.pt' | 2 snaps | 838 sessions (last)
+10:44:29 [INFO] 
+============================================================
+10:44:29 [INFO]   PHASE 1 — TRAIN + TEST TĨNH (train graph, 60 ngày)
+10:44:29 [INFO] ============================================================
+10:44:29 [INFO] 
+  → Đang train: SAGE
+C:\Users\admin\anaconda3\envs\gnn-angr-gpu-test\Lib\site-packages\torch\nn\modules\transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+10:44:30 [INFO]     Warm-up OK | gnn_type=sage
+10:44:30 [INFO] 
+============================================================
+  SAGE | Params=921,857 | pos_weight=11.12
+============================================================
+10:44:31 [INFO]   Ep 001 | TrainLoss=0.7781 | ValLoss=0.8938 | ValF1=0.3333 | AUC=0.8367 | Th=0.77 | LR=1.00e-03
+10:44:46 [INFO]   Ep 010 | TrainLoss=0.6314 | ValLoss=0.4922 | ValF1=0.5217 | AUC=0.8852 | Th=0.66 | LR=1.00e-03
+10:45:03 [INFO]   Ep 020 | TrainLoss=0.3895 | ValLoss=0.3899 | ValF1=0.7765 | AUC=0.9642 | Th=0.47 | LR=1.00e-03
+10:45:18 [INFO]   Ep 030 | TrainLoss=0.2416 | ValLoss=0.2172 | ValF1=0.9195 | AUC=0.9924 | Th=0.45 | LR=1.00e-03
+10:45:33 [INFO]   Ep 040 | TrainLoss=0.1384 | ValLoss=0.1138 | ValF1=0.9091 | AUC=0.9963 | Th=0.92 | LR=1.00e-03
+10:45:48 [INFO]   Ep 050 | TrainLoss=0.1971 | ValLoss=0.0942 | ValF1=0.9318 | AUC=0.9972 | Th=0.77 | LR=1.00e-03
+10:46:03 [INFO]   Ep 060 | TrainLoss=0.1111 | ValLoss=0.0821 | ValF1=0.9535 | AUC=0.9977 | Th=0.79 | LR=1.00e-03
+10:46:17 [INFO]   Ep 070 | TrainLoss=0.0644 | ValLoss=0.0964 | ValF1=0.9425 | AUC=0.9976 | Th=0.85 | LR=1.00e-03
+10:46:32 [INFO]   Ep 080 | TrainLoss=0.0307 | ValLoss=0.1273 | ValF1=0.9535 | AUC=0.9972 | Th=0.94 | LR=5.00e-04
+10:46:47 [INFO]   Ep 090 | TrainLoss=0.0065 | ValLoss=0.1818 | ValF1=0.9425 | AUC=0.9992 | Th=0.11 | LR=2.50e-04
+10:47:01 [INFO]   Ep 100 | TrainLoss=0.0116 | ValLoss=0.2019 | ValF1=0.9425 | AUC=0.9938 | Th=0.05 | LR=1.25e-04
+10:47:03 [INFO]   [EarlyStop] Ep=101 | best_val_f1=0.9762
+10:47:03 [INFO]   Best: epoch=61 | val_f1=0.9762 | val_auc=0.9982 | threshold=0.940
+
+═════════════════════════════════════════════════════════════════
+  PHASE 1 TEST TĨNH — SAGE
+═════════════════════════════════════════════════════════════════
+  Sessions      : 525
+  Threshold     : 0.940
+  Accuracy      : 100.00%
+  Precision     : 1.0000
+  Recall        : 1.0000
+  F1-Score      : 1.0000  ← chỉ số cốt lõi paper
+  AUC-ROC       : 1.0000
+  Avg Precision : 1.0000  (PR-AUC)
+  CM  TN=482  FP=0  FN=0  TP=43
+═════════════════════════════════════════════════════════════════
+10:47:03 [INFO] 
+  → Đang train: RGCN
+10:47:03 [INFO]     Warm-up OK | gnn_type=rgcn
+10:47:03 [INFO] 
+============================================================
+  RGCN | Params=243,969 | pos_weight=11.12
+============================================================
+10:47:04 [INFO]   Ep 001 | TrainLoss=0.7794 | ValLoss=0.7572 | ValF1=0.2727 | AUC=0.6180 | Th=0.55 | LR=1.00e-03
+10:47:07 [INFO]   Ep 010 | TrainLoss=0.7270 | ValLoss=0.6995 | ValF1=0.3273 | AUC=0.6282 | Th=0.61 | LR=1.00e-03
+10:47:10 [INFO]   Ep 020 | TrainLoss=0.7060 | ValLoss=0.6832 | ValF1=0.3273 | AUC=0.6806 | Th=0.64 | LR=1.00e-03
+10:47:14 [INFO]   Ep 030 | TrainLoss=0.6858 | ValLoss=0.6778 | ValF1=0.2449 | AUC=0.6378 | Th=0.59 | LR=1.00e-03
+10:47:17 [INFO]   Ep 040 | TrainLoss=0.6685 | ValLoss=0.6364 | ValF1=0.3273 | AUC=0.6856 | Th=0.61 | LR=1.00e-03
+10:47:20 [INFO]   Ep 050 | TrainLoss=0.6604 | ValLoss=0.6224 | ValF1=0.3333 | AUC=0.6807 | Th=0.86 | LR=1.00e-03
+10:47:24 [INFO]   Ep 060 | TrainLoss=0.6543 | ValLoss=0.6149 | ValF1=0.3396 | AUC=0.6874 | Th=0.77 | LR=1.00e-03
+10:47:27 [INFO]   Ep 070 | TrainLoss=0.6441 | ValLoss=0.6205 | ValF1=0.3462 | AUC=0.6908 | Th=0.61 | LR=1.00e-03
+10:47:31 [INFO]   Ep 080 | TrainLoss=0.6430 | ValLoss=0.6133 | ValF1=0.3462 | AUC=0.6924 | Th=0.59 | LR=1.00e-03
+10:47:34 [INFO]   Ep 090 | TrainLoss=0.6377 | ValLoss=0.6074 | ValF1=0.3462 | AUC=0.6908 | Th=0.63 | LR=1.00e-03
+10:47:37 [INFO]   Ep 100 | TrainLoss=0.6388 | ValLoss=0.6064 | ValF1=0.3462 | AUC=0.6924 | Th=0.59 | LR=5.00e-04
+10:47:38 [INFO]   [EarlyStop] Ep=103 | best_val_f1=0.3462
+10:47:38 [INFO]   Best: epoch=63 | val_f1=0.3462 | val_auc=0.6875 | threshold=0.760
+
+═════════════════════════════════════════════════════════════════
+  PHASE 1 TEST TĨNH — RGCN
+═════════════════════════════════════════════════════════════════
+  Sessions      : 525
+  Threshold     : 0.760
+  Accuracy      : 93.90%
+  Precision     : 0.9231
+  Recall        : 0.2791
+  F1-Score      : 0.4286  ← chỉ số cốt lõi paper
+  AUC-ROC       : 0.7314
+  Avg Precision : 0.3737  (PR-AUC)
+  CM  TN=481  FP=1  FN=31  TP=12
+═════════════════════════════════════════════════════════════════
+10:47:39 [INFO] 
+  → Đang train: GAT
+10:47:39 [INFO]     Warm-up OK | gnn_type=gat
+10:47:39 [INFO] 
+============================================================
+  GAT | Params=431,617 | pos_weight=11.12
+============================================================
+10:47:39 [INFO]   Ep 001 | TrainLoss=0.8236 | ValLoss=0.7840 | ValF1=0.1586 | AUC=0.5128 | Th=0.44 | LR=1.00e-03
+10:47:42 [INFO]   Ep 010 | TrainLoss=0.7527 | ValLoss=0.7628 | ValF1=0.1623 | AUC=0.5350 | Th=0.49 | LR=1.00e-03
+10:47:45 [INFO]   Ep 020 | TrainLoss=0.7603 | ValLoss=0.7551 | ValF1=0.1626 | AUC=0.5380 | Th=0.52 | LR=1.00e-03
+10:47:48 [INFO]   Ep 030 | TrainLoss=0.7453 | ValLoss=0.7407 | ValF1=0.1730 | AUC=0.5756 | Th=0.47 | LR=1.00e-03
+10:47:51 [INFO]   Ep 040 | TrainLoss=0.7386 | ValLoss=0.7375 | ValF1=0.1728 | AUC=0.5747 | Th=0.42 | LR=1.00e-03
+10:47:52 [INFO]   [EarlyStop] Ep=43 | best_val_f1=0.1846
+10:47:52 [INFO]   Best: epoch=3 | val_f1=0.1846 | val_auc=0.5708 | threshold=0.550
+
+═════════════════════════════════════════════════════════════════
+  PHASE 1 TEST TĨNH — GAT
+═════════════════════════════════════════════════════════════════
+  Sessions      : 525
+  Threshold     : 0.550
+  Accuracy      : 89.71%
+  Precision     : 0.2963
+  Recall        : 0.1860
+  F1-Score      : 0.2286  ← chỉ số cốt lõi paper
+  AUC-ROC       : 0.5677
+  Avg Precision : 0.1738  (PR-AUC)
+  CM  TN=463  FP=19  FN=35  TP=8
+═════════════════════════════════════════════════════════════════
+
+────────────────────────────────────────────────────────────────────────────────
+  PHASE 1 — SO SÁNH TEST TĨNH (train graph)
+────────────────────────────────────────────────────────────────────────────────
+  Model        F1    AUC     AP   Prec    Rec    Acc  Inductive
+────────────────────────────────────────────────────────────────────────────────
+** SAGE    1.0000 1.0000 1.0000 1.0000 1.0000 1.0000      YES ✓
+   RGCN    0.4286 0.7314 0.3737 0.9231 0.2791 0.9390       NO ✗
+   GAT     0.2286 0.5677 0.1738 0.2963 0.1860 0.8971       NO ✗
+────────────────────────────────────────────────────────────────────────────────
+
+═════════════════════════════════════════════════════════════════
+  PHASE 2 [INDUCTIVE ✓ — growing window, không retrain] — SAGE (snapshot cuối)
+═════════════════════════════════════════════════════════════════
+  Sessions      : 838
+  Threshold     : 0.950
+  Accuracy      : 66.11%
+  Precision     : 0.0719
+  Recall        : 1.0000
+  F1-Score      : 0.1341  ← chỉ số cốt lõi paper
+  AUC-ROC       : 0.9703
+  Avg Precision : 0.4371  (PR-AUC)
+  CM  TN=532  FP=284  FN=0  TP=22
+═════════════════════════════════════════════════════════════════
+10:52:24 [INFO]     Tổng inference time: 331.5 ms (2 windows)
+10:52:24 [INFO] 
+  [RGCN] epoch=63 | val_f1=0.3462 | train_threshold=0.760
+10:52:24 [INFO]     Snap [ 0]    | F1=0.0000 | AUC=nan | Rec=0.0000
+10:52:24 [INFO]     Snap [ 1]    | F1=0.6349 | AUC=0.9944 | Rec=0.9091
+
+═════════════════════════════════════════════════════════════════
+  PHASE 2 [TRANSDUCTIVE ✗ — single snapshot per step] — RGCN (snapshot cuối)
+═════════════════════════════════════════════════════════════════
+  Sessions      : 838
+  Threshold     : 0.760
+  Accuracy      : 97.26%
+  Precision     : 0.4878
+  Recall        : 0.9091
+  F1-Score      : 0.6349  ← chỉ số cốt lõi paper
+  AUC-ROC       : 0.9944
+  Avg Precision : 0.8851  (PR-AUC)
+  CM  TN=795  FP=21  FN=2  TP=20
+═════════════════════════════════════════════════════════════════
+10:52:24 [INFO]     Tổng inference time: 105.9 ms (2 windows)
+10:52:25 [INFO] 
+  [GAT] epoch=3 | val_f1=0.1846 | train_threshold=0.550
+10:52:25 [INFO]     Snap [ 0]    | F1=0.0000 | AUC=nan | Rec=0.0000
+10:52:25 [INFO]     Snap [ 1]    | F1=0.1186 | AUC=0.6674 | Rec=0.6818
+
+═════════════════════════════════════════════════════════════════
+  PHASE 2 [TRANSDUCTIVE ✗ — single snapshot per step] — GAT (snapshot cuối)
+═════════════════════════════════════════════════════════════════
+  Sessions      : 838
+  Threshold     : 0.550
+  Accuracy      : 73.39%
+  Precision     : 0.0649
+  Recall        : 0.6818
+  F1-Score      : 0.1186  ← chỉ số cốt lõi paper
+  AUC-ROC       : 0.6674
+  Avg Precision : 0.2494  (PR-AUC)
+  CM  TN=600  FP=216  FN=7  TP=15
+═════════════════════════════════════════════════════════════════
+10:52:25 [INFO]     Tổng inference time: 84.9 ms (2 windows)
+
+────────────────────────────────────────────────────────────────────────────────
+  PHASE 2 — SO SÁNH INDUCTIVE TEST (kết quả snapshot cuối, M=2)
+────────────────────────────────────────────────────────────────────────────────
+  Model        F1    AUC     AP   Prec    Rec    Acc  Inductive
+────────────────────────────────────────────────────────────────────────────────
+** SAGE    0.1341 0.9703 0.4371 0.0719 1.0000 0.6611      YES ✓
+   RGCN    0.6349 0.9944 0.8851 0.4878 0.9091 0.9726       NO ✗
+   GAT     0.1186 0.6674 0.2494 0.0649 0.6818 0.7339       NO ✗
+────────────────────────────────────────────────────────────────────────────────
+10:52:25 [INFO]   → Figure: results\figures\phase2_inductive_test.png
