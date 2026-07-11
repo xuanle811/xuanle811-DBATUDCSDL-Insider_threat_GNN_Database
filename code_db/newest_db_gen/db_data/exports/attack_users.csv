@@ -1,0 +1,5 @@
+scenario,db_user,job_role,start_day,end_day,start_date,end_date,phase_plan
+S1,sales_staff_013,sales_staff,61,80,2026-03-02,2026-03-21,recon:61-65; execution:66-80
+S2,accountant_027,accountant,63,90,2026-03-04,2026-03-31,recon:63-68; preparation:69-74; execution:75-85; cover:86-90
+S3,accountant_024,accountant,61,90,2026-03-02,2026-03-31,recon:61-65; execution:66-90
+S4,senior_dba_077,senior_dba,67,88,2026-03-08,2026-03-29,recon:67-71; preparation:72-76; execution:77-86; cover:87-88

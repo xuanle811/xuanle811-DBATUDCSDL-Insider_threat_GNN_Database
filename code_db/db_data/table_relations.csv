@@ -1,9 +1,0 @@
-source_table,target_table,relation_type
-region,nation,HAS_NATION
-nation,customer,HAS_CUSTOMER
-customer,orders,PLACES_ORDER
-orders,lineitem,CONTAINS_LINE
-part,partsupp,SUPPLIED_AS
-supplier,partsupp,PROVIDES
-customer,salary_details,HAS_SALARY
-salary_details,system_catalog,CATALOG_PROTECT

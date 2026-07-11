@@ -1,0 +1,15 @@
+table_name,schema,security_level,level_label,row_count
+region,public,1,PUBLIC,5
+nation,public,1,PUBLIC,25
+part,public,1,PUBLIC,100000
+customer,public,2,BUSINESS,75000
+orders,public,2,BUSINESS,750000
+lineitem,public,2,BUSINESS,2999671
+supplier,public,2,BUSINESS,5000
+partsupp,public,2,BUSINESS,400000
+department,hr,3,INTERNAL_SENSITIVE,8
+employee,hr,3,INTERNAL_SENSITIVE,79
+payroll,hr,4,CONFIDENTIAL,237
+system_monitor_log,sys,4,CONFIDENTIAL,438
+db_account,sys,5,RESTRICTED,79
+system_security_log,sys,5,RESTRICTED,20

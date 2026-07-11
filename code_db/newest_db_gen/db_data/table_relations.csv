@@ -1,0 +1,15 @@
+source_table,source_column,target_table,target_column,relation_type,cardinality
+orders,o_custkey,customer,c_custkey,FK,many-to-one
+lineitem,l_orderkey,orders,o_orderkey,FK,many-to-one
+lineitem,l_partkey,part,p_partkey,FK,many-to-one
+lineitem,l_suppkey,supplier,s_suppkey,FK,many-to-one
+partsupp,ps_partkey,part,p_partkey,FK,many-to-one
+partsupp,ps_suppkey,supplier,s_suppkey,FK,many-to-one
+supplier,s_nationkey,nation,n_nationkey,FK,many-to-one
+customer,c_nationkey,nation,n_nationkey,FK,many-to-one
+nation,n_regionkey,region,r_regionkey,FK,many-to-one
+employee,department_id,department,department_id,FK,many-to-one
+payroll,employee_id,employee,employee_id,FK,many-to-one
+db_account,employee_id,employee,employee_id,FK,one-to-one
+system_monitor_log,db_user,db_account,db_user,REF,many-to-one
+system_security_log,db_user,db_account,db_user,REF,many-to-one
